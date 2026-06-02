@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-06-02T03:06:50.109Z",
+  "products": [
+    {
+      "id": "autocad",
+      "name": "AutoCAD",
+      "vendor": "Autodesk",
+      "accent": "#c8102e",
+      "description": "AutoCAD 平台插件与自动化 API",
+      "versions": [
+        {
+          "id": "2021",
+          "displayName": "AutoCAD .NET 2021",
+          "platform": ".NET",
+          "description": "AcCoreMgd / AcDbMgd / AcMgd 托管 API",
+          "status": "available",
+          "graphUrl": "/data/autocad/2021/api-graph.json",
+          "annotationsUrl": "/data/autocad/2021/annotations.zh.json"
+        }
+      ]
+    },
+    {
+      "id": "coreldraw",
+      "name": "CorelDRAW",
+      "vendor": "Corel",
+      "accent": "#00a651",
+      "description": "CorelDRAW 自动化与插件 API",
+      "versions": [
+        {
+          "id": "2024",
+          "displayName": "CorelDRAW Graphics Suite 2024",
+          "platform": "COM / VBA",
+          "description": "CorelDRAW 对象模型与 VBA 宏 API",
+          "status": "planned"
+        }
+      ]
+    }
+  ]
+}

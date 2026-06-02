@@ -1,0 +1,30 @@
+# .NET
+**/bin/
+**/obj/
+*.user
+*.suo
+
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# IDE & OS
+.vs/
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*

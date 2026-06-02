@@ -1,0 +1,25 @@
+{
+  "sdkId": "autocad-2021",
+  "displayName": "AutoCAD .NET 2021",
+  "assemblies": [
+    {
+      "name": "AcCoreMgd",
+      "package": "AutoCAD.NET.Core",
+      "version": "24.0.0"
+    },
+    {
+      "name": "AcDbMgd",
+      "package": "AutoCAD.NET.Model",
+      "version": "24.0.0"
+    },
+    {
+      "name": "AcMgd",
+      "package": "AutoCAD.NET",
+      "version": "24.0.0"
+    }
+  ],
+  "namespacePrefixes": [
+    "Autodesk.AutoCAD."
+  ],
+  "excludeNamespaces": []
+}

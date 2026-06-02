@@ -1,0 +1,226 @@
+.api-card {
+  min-width: 200px;
+  max-width: 280px;
+  border-radius: 10px;
+  border: 2px solid var(--card-border, #e2e8f0);
+  background: var(--card-bg, #fff);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.api-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.api-card.selected {
+  border-color: var(--accent, #2563eb);
+  box-shadow: 0 0 0 3px var(--accent-ring, rgba(37, 99, 235, 0.25));
+}
+
+.api-card__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--card-border, #e2e8f0);
+  border-radius: 8px 8px 0 0;
+}
+
+.api-card__badge {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.api-card__badge--type {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.api-card__badge--interface {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.api-card__badge--method {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.api-card__badge--property {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.api-card__badge--event {
+  background: #fae8ff;
+  color: #a21caf;
+}
+
+.api-card__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #0f172a);
+  word-break: break-word;
+}
+
+.api-card__body {
+  padding: 8px 12px 10px;
+}
+
+.api-card__namespace {
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.api-card__signature {
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+  font-size: 11px;
+  color: var(--text-secondary, #475569);
+  background: var(--code-bg, #f8fafc);
+  padding: 4px 6px;
+  border-radius: 4px;
+  word-break: break-all;
+}
+
+.api-card__summary {
+  font-size: 12px;
+  color: var(--text-secondary, #475569);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.api-card__modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.api-card__modifier {
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: var(--modifier-bg, #f1f5f9);
+  color: var(--text-muted, #94a3b8);
+}
+
+/* 详情卡片（第2/4列） */
+.api-card--detail {
+  width: 100%;
+  max-width: 240px;
+  min-width: 0;
+  cursor: default;
+}
+
+.api-card--detail:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.api-card__example {
+  font-family: 'Cascadia Code', Consolas, monospace;
+  font-size: 10px;
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+/* 标签（第1/3列，仅显示名称） */
+.api-tag {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: box-shadow 0.15s;
+}
+
+.api-tag:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.api-tag.selected {
+  box-shadow: 0 0 0 2px var(--accent, #2563eb);
+}
+
+.api-tag--type {
+  background: #eff6ff;
+  color: #1e40af;
+  border-color: #bfdbfe;
+}
+
+.api-tag--interface {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border-color: #ddd6fe;
+}
+
+.api-tag--method {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.api-tag--property {
+  background: #fffbeb;
+  color: #b45309;
+  border-color: #fde68a;
+}
+
+.api-tag--event {
+  background: #fdf4ff;
+  color: #a21caf;
+  border-color: #f5d0fe;
+}
+
+.api-node-wrap--tag {
+  display: block;
+}
+
+.api-node-wrap--detail {
+  display: block;
+  pointer-events: auto;
+}
+
+.api-type-link {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border: 1px solid #bfdbfe;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.api-type-link:hover {
+  background: #dbeafe;
+}
+
+.api-type-link__name {
+  font-weight: 600;
+  text-decoration: underline;
+}
