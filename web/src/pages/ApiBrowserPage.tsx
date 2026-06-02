@@ -8,21 +8,10 @@ import { DetailPanel } from '../components/DetailPanel'
 import { getReferencedTypeId } from '../utils/visibleGraph'
 import { findNode, getTypeMembers, resolveSelectionFromFullName } from '../utils/treeModel'
 import { HOME_PATH, legacySdkRedirectPath, sdkBrowsePath } from '../utils/apiRoutes'
+import { persistLocale, readStoredLocale, useSyncDocumentLang } from '../utils/locale'
 import type { ApiGraph, ApiNode, Locale } from '../types/api'
 import type { ApiCatalog, ApiSdkRef } from '../types/product'
 import '../App.css'
-
-const LOCALE_KEY = 'api-browser-locale'
-
-function readStoredLocale(): Locale {
-  try {
-    const v = localStorage.getItem(LOCALE_KEY)
-    if (v === 'zh' || v === 'en') return v
-  } catch {
-    // ignore
-  }
-  return 'zh'
-}
 
 export function ApiBrowserPage() {
   const { productId = '', versionId = '' } = useParams<{ productId: string; versionId: string }>()
@@ -40,6 +29,7 @@ export function ApiBrowserPage() {
 
   const [searchParams, setSearchParams] = useSearchParams()
   const [locale, setLocale] = useState<Locale>(readStoredLocale)
+  useSyncDocumentLang(locale)
   const [selectedTypeId, setSelectedTypeId] = useState<string | null>(null)
   const [selectedMemberId, setSelectedMemberId] = useState<string | null>(null)
 
@@ -111,11 +101,7 @@ export function ApiBrowserPage() {
 
   const handleLocaleChange = useCallback((next: Locale) => {
     setLocale(next)
-    try {
-      localStorage.setItem(LOCALE_KEY, next)
-    } catch {
-      // ignore
-    }
+    persistLocale(next)
   }, [])
 
   const selectedType = useMemo(
